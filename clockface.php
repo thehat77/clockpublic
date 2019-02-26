@@ -29,6 +29,10 @@ $seconds = $next - ($minutes*60);
 if(strlen($seconds)==1) $seconds = "0$seconds";
 $h4->appendChild(new DOMElement('span',$seconds));
 $title = $head->appendChild(new DOMElement('title', $ground->events." so far in ".date("Y")));
+$style = $head->appendChild(new DOMElement('style',<<<HERE
+//style text goes here
+HERE
+));
 $meta = $head->appendChild(new DOMElement('meta'));
 $meta->setAttribute('http-equiv','refresh');
 $meta->setAttribute('content',3600-(date("i")*60)-date("s"));
